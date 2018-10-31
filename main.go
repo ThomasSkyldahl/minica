@@ -215,9 +215,6 @@ func sign(iss *issuer, domains []string, ipAddresses []string) (*x509.Certificat
 	template := &x509.Certificate{
 		DNSNames:    domains,
 		IPAddresses: parsedIPs,
-		Subject: pkix.Name{
-			CommonName: cn,
-		},
 		SerialNumber: serial,
 		NotBefore:    time.Now(),
 		NotAfter:     time.Now().AddDate(90, 0, 0),
